@@ -1,0 +1,51 @@
+:root {
+  --bg: #1e1e2e;            /* mocha base */
+  --text: #cdd6f4;          /* mocha text */
+  --subtext: #bac2de;       /* mocha subtext1 */
+  --dim: #9399b2;           /* mocha overlay2 */
+  --dome: #b4befe;          /* mocha lavender */
+  --constellation: #fab387; /* mocha peach */
+  --link: #cba6f7;          /* mocha mauve */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #eff1f5;            /* latte base */
+    --text: #4c4f69;          /* latte text */
+    --subtext: #5c5f77;       /* latte subtext1 */
+    --dim: #5c5f77;           /* latte subtext1 (overlay colors fail contrast) */
+    --dome: #7287fd;          /* latte lavender */
+    --constellation: #fe640b; /* latte peach */
+    --link: #8839ef;          /* latte mauve */
+  }
+}
+
+a {
+  color: var(--link);
+  text-decoration-color: var(--constellation);
+  text-decoration-style: wavy;
+  text-underline-offset: 5px; 
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+}
+
+header p, article p {
+  color: var(--subtext);
+}
+
+footer p {
+  color: var(--dim);
+}
+
+.wrapper {
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  margin-inline: auto;
+  max-width: 32rem;
+  padding: 0 1.25rem;
+  text-align: center;
+}
