@@ -6,6 +6,7 @@
   --dome: #b4befe;          /* mocha lavender */
   --constellation: #fab387; /* mocha peach */
   --link: #cba6f7;          /* mocha mauve */
+  --star: #fab387;
 }
 
 @media (prefers-color-scheme: light) {
@@ -17,7 +18,19 @@
     --dome: #7287fd;          /* latte lavender */
     --constellation: #fe640b; /* latte peach */
     --link: #8839ef;          /* latte mauve */
+    --star: #fe640b;
   }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #small_stars { animation: animStar 50s linear infinite; }
+  #medium_stars { animation: animStar 100s linear infinite; }
+  #big_stars { animation: animStar 150s linear infinite; }
+}
+
+@keyframes animStar {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-2000px); }
 }
 
 @font-face {
@@ -59,6 +72,10 @@ footer p {
   color: var(--dim);
 }
 
+.logo-dome { stroke: var(--dome); }
+.logo-line { stroke: var(--constellation); }
+.logo-star { fill: var(--constellation); }
+
 .wrapper {
   box-sizing: border-box;
   font-size: 1.6rem;
@@ -68,11 +85,56 @@ footer p {
   text-align: center;
 }
 
-.logo-dome { stroke: var(--dome); }
-.logo-line { stroke: var(--constellation); }
-.logo-star { fill: var(--constellation); }
-@media (prefers-color-scheme: light) {
-  .logo-dome { stroke: var(--dome); }
-  .logo-line { stroke: var(--constellation); }
-  .logo-star { fill: var(--constellation); }
+.universe {
+  inset: 0;
+  overflow: hidden;
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.space {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+
+.space::after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+}
+
+#small_stars {
+  box-shadow: var(--small-stars);
+}
+
+#small_stars::after {
+  box-shadow: var(--small-stars);
+}
+
+#medium_stars {
+  width: 2px;
+  height: 2px;
+  box-shadow: var(--medium-stars);
+}
+
+#medium_stars::after {
+  width: 2px;
+  height: 2px;
+  box-shadow: var(--medium-stars);
+}
+
+#big_stars {
+  width: 3px;
+  height: 3px;
+  box-shadow: var(--big-stars);
+}
+
+#big_stars::after {
+  width: 3px;
+  height: 3px;
+  box-shadow: var(--big-stars);
 }
