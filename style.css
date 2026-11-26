@@ -57,6 +57,14 @@ a {
   text-decoration: none;
 }
 
+a.me {
+  color: var(--link);
+}
+
+a.me:hover, a.me:focus-visible {
+  color: var(--constellation);
+}
+
 a:hover, a:focus-visible {
   color: var(--link);
   text-decoration: none;
@@ -84,10 +92,16 @@ h2 {
 
 header p, article p {
   color: var(--subtext);
+  margin: 0;
+}
+
+footer {
+  margin-block: 4rem;
 }
 
 footer p {
   color: var(--dim);
+  margin: 0;
 }
 
 span {
